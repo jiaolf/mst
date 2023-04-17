@@ -1,0 +1,97 @@
+原理和概念，再结合代码，或自己去写个demo加深理解。
+
+【---------------大题----------------】
+01. 设计模式
+	- 常用的设计模式有哪些？
+	- 你在项目中用过哪些设计模式？
+	- 设计模式的六大原则
+02. OKhttp
+	- 说一下你对OKhttp的理解
+	- OKhttp中的拦截器有哪些？
+	- OKhttp中用到了哪些设计模式？
+	- 你是如何封装OKhttp的？
+	- OKhttp中，如果服务端返回了token失效，如何通过拦截器的方式处理？
+	- 
+03. Retrofit
+	- Retrofit的实现原理是什么？
+	- Retrofit中用到了哪些设计模式？
+04. Glide
+
+05. EventBus
+
+06. App启动流程
+	- 从点击应用图标到进入Activity的OnCreate方法的整个流程
+
+07. MVP 、MVVM
+
+08. RxJava
+
+09. Handler（Looper、MessageQueue、ThreadLocal）
+	- Looper.loop()为什么不卡死
+	- Handler内存泄漏的原因是什么？
+
+10. 线程池
+	- 线程池的7个参数
+	- 线程池的种类
+11. 线程安全
+
+12. 事件分发机制
+
+13. View的滑动冲突
+
+14. View的绘制机制，以及详细的加载流程
+
+15. 进程间通信的方式
+	- IPC通信的方式有哪些？
+	- Binder的原理
+
+16. 性能优化问题
+	- ANR的问题及解决
+	- 内存泄漏
+	- 布局优化
+	- 绘制优化
+	- 响应速度优化
+	- bitmap优化
+	- 线程优化
+	- apk瘦身
+
+【---------------小题---------------】
+1. activity的四种启动模式及应用场景
+
+2. activity的onSaveInstanceState和onRestoreInstanceState分别什么时候调用？
+
+3. 什么是Service？IntentService？
+
+4. Service的两种不同启动方式？二者的区别是什么？
+
+5. 最新几个android版本的差异，有哪些变化或新特性
+
+6. 广播有哪些？静态注册的广播和动态注册的广播的区别？
+
+7. Activity A启动了一个dialog样式的Activity B，说一下A的生命周期变化
+
+8. 动画有哪些种类？如果有很多张大图片，可以使用帧动画吗？若不可以，该用什么方式实现？
+
+9. RecyclerView的缓存机制，RecyclerView优化
+
+10. Java中的四种引用
+
+11. 如何屏幕适配？
+
+12. android中序列化的方式有哪些？区别是什么？
+
+13. 什么是线程，什么是进程？区别？
+
+14. 怎么保证Service不被杀死
+
+15. Intent可以传递哪些类型的数据？
+
+16. Http和Https的区别
+
+17. 如何保证网络通信安全？加密算法有哪些？
+
+18. HandlerThread是什么？
+
+19. 
+
+
