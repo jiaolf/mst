@@ -21,6 +21,10 @@
 
 06. App启动流程
 	- 从点击应用图标到进入Activity的OnCreate方法的整个流程
+	- ActivityThread
+	- ActivityManagerService
+	- ApplicationThread
+	- SystemServer
 
 07. MVP 、MVVM
 
@@ -45,7 +49,7 @@
 	- IPC通信的方式有哪些？
 	- Binder的原理
 
-16. 性能优化问题
+16. 性能优化问题【重点】
 	- ANR的问题及解决
 	- 内存泄漏
 	- 布局优化
@@ -55,9 +59,10 @@
 	- 线程优化
 	- apk瘦身
 
-17. 热修复（腾讯的热修复，基于类加载的）
+17. 热修复
+	- 腾讯的
 
-18. Textview的AutoSize的原理
+18. AutoSize的原理
 
 19. 应用安全和apk加固
 
@@ -66,6 +71,9 @@
 21. 四大组件的启动过程
 
 22. 插件化、组件化
+
+23. Freamwork相关
+
 
 【---------------小题---------------】
 1. activity的四种启动模式及应用场景
@@ -100,7 +108,7 @@
 
 16. Http和Https的区别
 
-17. 如何保证网络通信安全？加密算法有哪些？
+17. 如何保证网络通信安全？（https，数据加密）加密算法有哪些？（散列加密：md5,sha1,sha256  对称加密：des,非对称加密：RSA）
 
 18. HandlerThread是什么？
 

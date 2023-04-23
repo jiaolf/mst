@@ -9,6 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MST">
+        <service
+            android:name=".MyService2"
+            android:enabled="true"
+            android:exported="false"></service>
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".mvvm.MVVMDemoActivity"
+            android:exported="false"
+            android:launchMode="singleInstancePerTask" />
+        <activity
+            android:name=".mvp.MVPDemoActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

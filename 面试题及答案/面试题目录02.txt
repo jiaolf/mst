@@ -1,0 +1,160 @@
+一、Android基础
+1. Activity
+	- Activity的四大启动模式，及应用场景？
+	- Activity中的onStart和onResume的区别？onPause和onStop的区别？
+2. 屏幕适配
+3. Android消息机制
+	- Android消息机制的介绍
+	- Looper.loop()死循环为什么不会造成主线程的卡死？
+	- IdelHandler介绍
+	- Handler内存泄露的原因是什么？
+4. View事件分发机制、View绘制原理
+	- 滑动冲突如何解决
+5. Bitmap
+	- Bitmap的内存计算法式
+	- Bitmap的高效加载
+
+6. Service
+	- IntentService
+7. ContentProvider
+8. Broadcast
+9. Android动画
+10. recyclerview的缓存机制
+
+
+二、Android进阶（重点考察Android Framework、性能优化、第三方框架、前沿技术的使用）
+1. 进程间通信的方式？
+	- Binder的介绍？与其他IPC方式的优缺点
+	- Binder的通信过程？Binder的原理
+
+2. Android序列号的方式有哪些？区别是什么？
+3. Framework
+	- Zygote孕育进程的过程？
+	- Activity的启动过程？
+	- App的启动过程？
+	- Apk的安装过程
+	- 生成apk的构建过程
+	- Activity启动过程跟Window的关系？
+	- Activity、Window、ViewRoot和DecorView之间的关系？
+4. 说说对Context的理解
+5. 性能优化
+	- 简述内存泄漏，你处理过哪些内存泄漏
+	- 内存泄漏检测框架LeakCanary
+	- 卡顿检测
+6. 第三方库
+	- Glide
+	- Okhttp
+	- Retrofit
+	- RxJava
+	- ARouter
+	- EventBus
+7. Android Jetpack
+	- LifeCycle
+	- ViewModel、LiveData
+	- DataBinding
+	- Dagger2、Hilt
+
+
+三、Java基础
+1. equals和hashcode的关系？
+2. 集合
+	- HashMap的特点是什么？底层数据结构？
+	- 
+3. 泛型
+	- 对泛型的理解
+	- 什么是类型擦除？
+4. 反射
+	- 动态代理和静态代理
+	- 
+5. 简述Java的异常处理机制
+	- 如何避免应用出现异常
+	- 
+
+四、java并发
+1. 线程
+	- 线程的状态
+	- 线程中的wait和sleep的区别
+	- 线程和进程的区别
+
+2. 线程池
+	- 线程池的特点和好处
+	- 线程池的几个参数
+	- 线程池的工作流程
+	- 线程池的种类（jdk中提供的四种实现）
+3. 锁
+	- 死锁触发的四大条件？
+	- Synchronized关键字
+	- Synchronized和Lock的区别？
+	- 乐观锁和悲观锁的举例？相关实现？
+4. 线程间通信
+	- 多线程间如何进行信息通信？（线程间通信的模型有两种：共享内存和消息传递，如对应volatile和wait/notify）
+	- notify和notifyAll方法的区别？
+	- wait/notify和Condition类实现的等待通知有什么区别？
+5. 多线程间有序性、可见性、原子性是什么意思？volatile的原理
+6. 阻塞队列
+	- 常见的阻塞队列有哪几种？特点是什么？
+	- ConcurrentHashMap的原理
+
+	
+五、JVM
+1. JVM的内存区域
+2. JVM的内存模型
+3. GC机制
+	- 如何判断对象可回收？
+	- GC的常见算法？
+	- MinorGC和Full GC的区别？
+	- 四种不同的引用类型
+4. 类的加载过程？双亲委派机制？
+
+
+六、kotlin
+1. ==、===和equal的区别，var和val的区别
+2. 函数
+	- kotlin中默认参数的作用及原理？顶层函数的原理？
+	- 中缀函数是什么？注意点是什么？
+	- 解构函数的本质？
+	- 扩展函数的本质？
+	- 扩展函数和成员函数的区别？
+3. 类、对象
+	- Kotlin中常用的类的修饰符有哪些？
+	- Kotlin中可见性修饰符有哪些？
+	- Kotlin中的内部类和Java中的内部类有什么不同？
+	- kotlin属性代理背后的原理？
+	- object和companion object的一些特点？
+4. lambda
+	- lambda表达式有几种？
+	- kotlin和Java内部类或者lambda表达式访问局部变量有什么不同？
+	- 使用lambda表达式访问的局部变量有什么不同？
+	- 为什么要使用内联函数？内联函数的作用？
+5. 类型系统
+	- Kotlin中的基本数据类型的理解？
+	- Array<Int>和IntArray的区别？
+	- 使用实化类型参数解决泛型擦除的原理是什么？
+6. 协程
+	- 协程是什么？协程的有什么特点？协程和线程的区别？
+	-  协程的原理？
+
+
+七、网络
+1. HTTP和HTTPS
+	- HTTP和HTTPS的区别
+	- Http1.1和http2有什么区别？
+	- SSL/TLS的握手过程
+	- HTTPS传输过程中是如何处理进行加密的？为什么有对称加密的情况下仍然需要进行非对称加密？
+2. 三次握手和四次挥手
+3. tcp/udp
+4. 网络通信的加密算法有哪些？
+
+
+八、设计模式和架构
+1. 设计模式的六大原则 
+2. 单例模式
+	- 实现单例的方式有哪些？
+3. 常用的设计模式
+4. MVC、MVP、MVVM
+5. ViewModel是如何知道View层的生命周期的？
+
+
+九、数据结构和算法
+
+
