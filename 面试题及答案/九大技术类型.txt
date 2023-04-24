@@ -1,17 +1,17 @@
-1. Android基础
+一、Android基础
 	- Android基础知识，如四大组件（Activity/Service/Receiver/ContentProvider）
-	- Android消息机制
+	- Android消息机制（除了常见问题，还有注意其他问题，如：message的消息屏障）
 	- View绘制、View事件分发、滑动冲突解决
 	- Bitmap、RecyclerView、动画等UI相关内容
 
-2. Android进阶
+二、Android进阶
 	- Android Framework相关：ActivityThread/AMS/SystemServer/Window等; App启动流程等
 	- IPC跨进程通信，Binder原理等
 	- 常用的第三方库源码分析，如OKhttp、Retrofit、Glide、EventBus、ARouter等等
 	- Android Jetpack的使用。LifeCycle，ViewModel，LiveData，DataBing，Dagger,Hilt等
 	- 其他：热修复、人脸识别、插件化、组件化、双进程守护（保活）、OpenGL、NDK、Tenorflow等
 
-3. Java基础
+三、Java基础
 	- 基础面试题， 如String a = new String("xyz")创建了几个对象等
 	- 多态、继承、抽象类、内部类、静态内部类等
 	- 泛型的设计和应用
@@ -20,29 +20,29 @@
 	- 集合
 	- Java8中：lambda表达式、Stream、函数式接口的使用
 
-4. Java并发
+四、Java并发
 	- 基础问题：线程和进程、线程的创建、线程池等
 	- Java的内存模型
 	- volatile、Synchronized与锁、CAS与原子操作、AQS等
 	- 线程池的原理、阻塞队列、Lock锁、并发集合容器...
 
-5. JVM
+五、JVM
 	- JVM的运行时内存结构
 	- 垃圾回收算法、垃圾回收器等
 	- 类加载机制
 
-6. Kotlin
+六、Kotlin
 
 
-7. 网络及安全
+七、网络及安全
 	- TCP和UDP，socket, http和https等
 	- 通信安全、加密、apk加固等
 
-8. 设计模式和架构
+八、设计模式和架构
 	- 六大设计原则、23种设计模式
 	- MVP/MVP/MVVM
 
-9. 数据结构和算法
+九、数据结构和算法
 
 
 

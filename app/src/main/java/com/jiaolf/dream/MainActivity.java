@@ -40,11 +40,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //一个Android应用启动后有几个线程？
+        int threadCount = Thread.activeCount();
+        Log.i("jlf", "一个Android应用最少有线程数：" + threadCount);
+
         Handler handler;
         Looper looper;
 
+        // Intent传递数据用的就是Bundle。
         //使用bundle可以
         Intent intent = getIntent();
+        intent.putExtra("name", "jlf");
+
         Bundle bundle = new Bundle();
         intent.putExtras(bundle);
 

@@ -37,19 +37,92 @@ private ServiceConnection mWeatherServiceConnection = new ServiceConnection() {
 
 **IPC的几种方式：**
 
--  使用Bundle
-- 使用文件共享，ContentProvider
-- 使用Messenger【绑定服务-单线程排队执行】
-- 使用AIDL【常用的，绑定服务-多线程任务】
-- 使用Socket
+- 使用Bundle
+
+  ```
+  Bundle实现了Parcelable接口，而Intent中携带的数据，就是保存在了Bundle对象中。Activity、Service、Receiver之间就可以通过相互调用传递Intent来实现跨进程通信。所以说，Bundle是一种最简单的跨进程通信的方式。
+  ```
+
+  
+
+- 使用文件共享，以及SharedPreference等
+
+- ContentProvider
+
+- 使用Messenger【是对AIDL的封装，底层是Binder。绑定服务-单线程排队执行】
+
+  ```java
+  public Messenger(Handler target){
+  	mTarget = target.getIMessenger();
+  }
+  
+  public Messenger(IBinder target){
+  	mTarget = IMessenger.Stub.asInterface(target);
+  }
+  ```
+
+  
+
+- 使用AIDL【底层是Binder。常用的，绑定服务-多线程任务】
+
+  ```java
+  比如:
+  Weather.aidl（里面就一行代码parcelable Weather;)
+  Weather.java（需要实现Parcelable接口)
+  IWeatherManager.aidl(获取天气数据等方法)
+  
+  AIDL文件编译后，如IWeatherManager.aidl -> IWeatherManager.java 文件
+      
+  里面有一个实现了IWeatherManager接口、并继承android.os.Binder的抽象类Stub。以及Stub的实现类，也是代理类Proxy
+      
+  Stub类中的重要方法：
+  asInterface(android.os.IBinder obj)
+  asBinder
+  onTransact
+      
+  Proxy类
+  ```
+
+  
+
+- 使用Socket【socket不仅可以用于两台不同的主机上通信，也可以在同一主机上不同的进程间通信】
 
 
+
+在Android上实现多进程的具体操作：(四大组件activity、service、Receiver、ContentProvider都一样)
+
+```java
+//方式一
+<activity
+	android:name="com.jlf.dream"
+	android:process=":remote"/> //进程名称 com.jlf.dream:remote
+        
+//方式二
+<activity
+    andorid:name="com.jlf.dream"
+    android:process="com.jlf.dream.remote"/> //进程名称 com.jlf.dream.remote
+        
+区别：
+":remote" 进程名以“:”开头的进程属于当前应用的私有进程，其他应用组件不可以和它跑在同一个进程中。
+"com.jlf.dream.remote" 不以“:”开头的属于全局进程，其他应用通过ShareUID方式可以和它跑在同一个进程中。    
+    
+每个应用都有唯一的UID，如果两个应用有相同的UID并且签名相同，才可以通过ShareUID跑在同一个进程中。
+```
+
+使用多进程会遇到的问题：
+
+1. 静态成员和单例模式完全失效。（虽然看起来在同一个项目中，但他们相当于是两个独立的应用）
+2. 线程同步机制完全失效（相当于两块内存，因此无论是锁对象还是锁类都无法保证同步）
+3. SharedPreferences的可靠性下降（并发读写xml问题）
+4. Application会多次创建
+
+> 对于同一个应用的多进程，就相当于两个不同的应用采用了SharedUID模式
 
 ### **Binder的理解**
 
 > 从IPC角度来说，Binder是Android中的一种跨进程通信方式；Binder还可以理解为虚拟的物理设备，它的设备驱动是/dev/binder；从Android Framework来讲，Binder是Service Manager连接各种Manager和对应的ManagerService的桥梁。从面向对象和CS模型来讲，Client通过Binder和远程的Server进行通讯。
 
-Binder与其他IPC比较：
+Binder与其他IPC（这里的其他，主要是指linux上的IPC方式，因为Android上的Messenger或者AIDL，本质上还是Binder）比较：
 
 - 效率高：除了内存共享外，其他IPC都需要进行两次数据拷贝，而因为Binder使用内存映射的关系，仅需要一次数据拷贝。
 - 安全性好：接收方可以从数据包中获取发送发的进程Id和用户Id，方便验证发送方的身份，其他IPC想要实验只能够主动存入，但是这有可能在发送的过程中被修改。
